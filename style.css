@@ -14,7 +14,7 @@ html, body {
 }
 
 .explanation {
-    font-size: 4em;
+    font-size: 3em;
     margin:  10vh 5vw 20vh;
     color: white;
     font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
