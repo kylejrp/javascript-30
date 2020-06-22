@@ -80,6 +80,7 @@ html, body {
 .frame {
     margin: 4px;
     background-color: var(--base);
+    cursor: pointer;
 }
 
 .left, .right {
