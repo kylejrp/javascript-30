@@ -1,15 +1,20 @@
-body {
+html, body {
     background-color: black;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .frames {
+    --perspective: perspective(40rem);
     display: flex;
     border: 8px solid grey;
     background-color: #aaa;
     width: 80vw;
     height: 90px;
     margin: 0 auto;
-    transform: perspective(160rem) rotateX(35deg);
+    transform: var(--perspective) rotateX(35deg);
 }
 
 .left.frame, .right.frame {
@@ -51,9 +56,13 @@ body {
 }
 
 
+.frame, .background, .foreground {
+    transition: all 0.05s;
+    transition-timing-function: ease-out;
+}
+
 .frame {
     margin: 4px;
-    transition: all 0.07s;
     background-color: var(--base);
 }
 
@@ -84,49 +93,64 @@ body {
     border: 8px solid var(--base);
 }
 
+.middle.frame.playing {
+    background-image: linear-gradient(
+        var(--lighter),
+        var(--lighter) 45%,
+        var(--base) 45%,
+        var(--base) 55%,
+        var(--lighter) 55%
+    );
+    border: 8px solid var(--base);
+    box-shadow: 
+    0 0 15px 4px var(--base),
+    0 0 30px 7px var(--lighter);
+}
+
+.playing .foreground {
+    background-color: var(--lighter);
+    box-shadow: 
+    0 0 15px 4px var(--base);
+}
+
 .orange {
+    --lighter: rgb(255, 215, 140);
     --base: orange;
     --darker: rgb(134, 87, 0);
 }
 
 .red {
+    --lighter: rgb(253, 133, 133);
     --base: red;
     --darker: rgb(141, 0, 0);
 }
 
 .yellow {
+    --lighter: rgb(255, 255, 134);
     --base: yellow;
     --darker: rgb(145, 145, 3);
 }
 
 .blue {
+    --lighter: rgb(145, 145, 255);
     --base: blue;
     --darker: rgb(0, 0, 141);
 }
 
 .green {
+    --lighter: rgb(67, 126, 67);
     --base: green;
     --darker: rgb(1, 59, 1);
 }
 
-
-.keys {
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
+.middle.playing {
+    transform: var(--perspective) translateZ(10rem);
 }
 
-.key {
-    flex: 1 1 0;
-    transition: all 0.07s;
-    border: 1px solid black;
-    padding: 2em;
-    margin: 1.5em;
+.left.playing .foreground{
+    transform: var(--perspective) translateY(-50%) translateX(10px) translateZ(10rem);
 }
 
-.playing {
-    transform: scale(1.1);
-    border-color: red;
-    box-shadow: 0 0 5px black;
+.right.playing .foreground{
+    transform: var(--perspective) translateY(-50%) translateX(-10px) translateZ(10rem);
 }
-
