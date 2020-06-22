@@ -1,9 +1,24 @@
 html, body {
     background-color: black;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(3, 8, 19),
+        rgb(3, 16, 39) 66.7%,
+        rgb(5, 26, 61) 100%
+    );
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.explanation {
+    font-size: 4em;
+    margin:  10vh 5vw 20vh;
+    color: white;
+    font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-align: center;
 }
 
 .frames {
@@ -12,6 +27,7 @@ html, body {
     border: 8px solid grey;
     background-color: #aaa;
     width: 80vw;
+    max-width: 900px;
     height: 90px;
     margin: 0 auto;
     transform: var(--perspective) rotateX(35deg);
@@ -103,14 +119,14 @@ html, body {
     );
     border: 8px solid var(--base);
     box-shadow: 
-    0 0 15px 4px var(--base),
-    0 0 30px 7px var(--lighter);
+    0 0 12px 2px var(--base),
+    0 0 24px 3px var(--lighter);
 }
 
 .playing .foreground {
     background-color: var(--lighter);
     box-shadow: 
-    0 0 15px 4px var(--base);
+    0 0 8px 2px var(--base);
 }
 
 .orange {
