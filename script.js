@@ -7,7 +7,7 @@ function updateHandRotation() {
     const oneMinuteInSeconds = 60;
     const oneHourInSeconds = 60 * 60;
 
-    let currentSeconds = currentTime.getSeconds() * 20;
+    let currentSeconds = currentTime.getSeconds();
     let currentMinuteInSeconds = currentTime.getMinutes() * oneMinuteInSeconds + currentSeconds;
     let currentHourInSeconds = currentTime.getHours() * oneHourInSeconds + currentMinuteInSeconds;
 
