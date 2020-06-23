@@ -4,9 +4,16 @@ setInterval(updateHandRotation, 200);
 function updateHandRotation() {
     let currentTime = new Date();
 
-    updateHand('.second-hand', currentTime.getSeconds(), 60);
-    updateHand('.minute-hand', currentTime.getMinutes(), 60);
-    updateHand('.hour-hand', currentTime.getHours(), 60);
+    const oneMinuteInSeconds = 60;
+    const oneHourInSeconds = 60 * 60;
+
+    let currentSeconds = currentTime.getSeconds() * 20;
+    let currentMinuteInSeconds = currentTime.getMinutes() * oneMinuteInSeconds + currentSeconds;
+    let currentHourInSeconds = currentTime.getHours() * oneHourInSeconds + currentMinuteInSeconds;
+
+    updateHand('.second-hand', currentSeconds, 60);
+    updateHand('.minute-hand', currentMinuteInSeconds, oneMinuteInSeconds * 60);
+    updateHand('.hour-hand', currentHourInSeconds, oneHourInSeconds * 12);
 
 }
 
