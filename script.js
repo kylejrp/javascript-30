@@ -1,24 +1,26 @@
-setInterval(updateHandRotation, 200);
+setInterval(updateHands, 200);
 
+const baseRotation = 90.0;
 
-function updateHandRotation() {
-    let currentTime = new Date();
+function updateHands() {
+    const currentTime = new Date();
 
     const oneMinuteInSeconds = 60;
-    const oneHourInSeconds = 60 * 60;
+    const maxMinutesInSeconds = oneMinuteInSeconds * 60;
+    const oneHourInSeconds = oneMinuteInSeconds * 60;
+    const maxHoursInSeconds = oneHourInSeconds * 12;
 
-    let currentSeconds = currentTime.getSeconds();
-    let currentMinuteInSeconds = currentTime.getMinutes() * oneMinuteInSeconds + currentSeconds;
-    let currentHourInSeconds = currentTime.getHours() * oneHourInSeconds + currentMinuteInSeconds;
+    const currentSeconds = currentTime.getSeconds();
+    const currentMinuteInSeconds = currentTime.getMinutes() * oneMinuteInSeconds + currentSeconds;
+    const currentHourInSeconds = currentTime.getHours() * oneHourInSeconds + currentMinuteInSeconds;
 
     updateHand('.second-hand', currentSeconds, 60);
-    updateHand('.minute-hand', currentMinuteInSeconds, oneMinuteInSeconds * 60);
-    updateHand('.hour-hand', currentHourInSeconds, oneHourInSeconds * 12);
-
+    updateHand('.minute-hand', currentMinuteInSeconds, maxMinutesInSeconds);
+    updateHand('.hour-hand', currentHourInSeconds, maxHoursInSeconds);
 }
 
 function updateHand(selector, value, maxValue) {
-    let hand = document.querySelector(selector);
-    let rotation = 90.0 + (value / parseFloat(maxValue)) * 360.0;
+    const hand = document.querySelector(selector);
+    let rotation = (baseRotation + (value / parseFloat(maxValue)) * 360.0);
     hand.style.transform = `rotate(${rotation}deg)`;
 }
