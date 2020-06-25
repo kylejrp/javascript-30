@@ -1,7 +1,8 @@
 const baseRotation = 90.0;
 
 updateHands();
-document.querySelector('.clock.loading').classList.remove('loading')
+document.querySelectorAll('.clock.loading')
+    .forEach((clock) => clock.classList.remove('loading'))
 setInterval(updateHands, 100);
 
 function updateHands() {
@@ -16,14 +17,16 @@ function updateHands() {
     const currentMinuteInSeconds = currentTime.getMinutes() * oneMinuteInSeconds + currentSeconds;
     const currentHourInSeconds = currentTime.getHours() * oneHourInSeconds + currentMinuteInSeconds;
 
-    updateHand('.second-hand', currentSeconds, 60);
-    updateHand('.minute-hand', currentMinuteInSeconds, maxMinutesInSeconds);
-    updateHand('.hour-hand', currentHourInSeconds, maxHoursInSeconds);
+    const secondHands = document.querySelectorAll('.second-hand');
+    const minuteHands = document.querySelectorAll('.minute-hand');
+    const hourHands = document.querySelectorAll('.hour-hand');
+
+    secondHands.forEach((secondHand) => updateHand(secondHand, currentSeconds, 60));
+    minuteHands.forEach((minuteHand) => updateHand(minuteHand, currentMinuteInSeconds, maxMinutesInSeconds));
+    hourHands.forEach((hourHand) => updateHand(hourHand, currentHourInSeconds, maxHoursInSeconds));
 }
 
-function updateHand(selector, value, maxValue) {
-    const hand = document.querySelector(selector);
-
+function updateHand(hand, value, maxValue) {
     if (hand.dataset.locked === 'true') {
         return;
     }
