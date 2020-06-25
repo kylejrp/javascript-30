@@ -46,11 +46,15 @@ body {
     top: 50%;
     transform: rotate(90deg);
     transform-origin: center right;
-    transition: all 0.05s;
+    transition: all 0.1s;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.6, 0.17);
 }
 
 .second-hand {
     background: red;
     z-index: 1;
+}
+
+.loading {
+    display: none;
 }

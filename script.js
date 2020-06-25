@@ -1,7 +1,8 @@
 const baseRotation = 90.0;
 
-setInterval(updateHands, 100);
 updateHands();
+document.querySelector('.clock.loading').classList.remove('loading')
+setInterval(updateHands, 100);
 
 function updateHands() {
     const currentTime = new Date();
