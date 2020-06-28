@@ -44,7 +44,7 @@ function updateHand(hand, value, maxValue) {
         hand.dataset.locked = 'true';
         hand.addEventListener('transitionend', () => {
             hand.style.transition = 'none';
-            hand.style.transform = `rotate(${rotation - 360}deg)`;
+            hand.style.setProperty('--rotation', `${rotation - 360}deg`);
             hand.dataset.locked = false;
             // Here would be a good place to set `hand.style.transition = null`,
             // but doing so triggers an transition animation to play. The transition
@@ -56,5 +56,5 @@ function updateHand(hand, value, maxValue) {
     hand.style.transition = null;
 
     hand.dataset.value = value;
-    hand.style.transform = `rotate(${rotation}deg)`;
+    hand.style.setProperty('--rotation', `${rotation}deg`);
 }
