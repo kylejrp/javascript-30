@@ -36,9 +36,13 @@ body {
     height: auto;
 }
 
+.grayscale {
+    filter: grayscale(100%);
+}
+
 .quote {
-    font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-    font-size: 2em;
+    font-family: 'Prata', serif;
+    font-size: 3em;
 }
 
 .cross {
