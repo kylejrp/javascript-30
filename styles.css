@@ -1,15 +1,61 @@
+html {
+    --black: #332927;
+    --faded-red: #543837;
+    --faded-yellow: #998E7A;
+    --white: #9DA0A5;
+    --off-white: #BCC3BC;
+    --off-yellow: #F6E6B3;
+
+    background-color: var(--off-white);
+    background: radial-gradient(ellipse at bottom left, var(--off-yellow), var(--off-white));
+    background-attachment: fixed;
+
+    transform: perspective(3200px) rotate3d(0, 1, 0, 20deg) translateX(100px)
+
+}
+
 body {
     margin: 0;
+    width: 100%;
     min-height: 100vh;
-    background-color: navy;
+}
+
+.wall {
+    margin: 2em auto;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    grid-gap: 1em;
+}
+
+.painting {
+    width: var(--size);
+    height: auto;
+}
+
+.quote {
+    font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    font-size: 2em;
+}
+
+.cross {
+    font-size: 10em;
+    font-weight: bolder;
+}
+
+.no-wrap {
+    white-space: nowrap;
 }
 
 .clock {
-    width: 100px;
-    height: 100px;
     border: 5px solid white;
     border-radius: 50%;
     position: relative;
+    width: var(--size);
+    height: var(--size);
 }
 
 .clock-face {
@@ -19,22 +65,200 @@ body {
 }
 
 .hand {
-    width: 50%;
-    height: 6px;
+    --thickness: 6px;
+    --length: 100%;
+    width: calc(var(--length)/2);
+    height: var(--thickness);
     background: black;
     position: absolute;
     top: 50%;
-    transform: rotate(var(--rotation));
+    left: calc(50% - var(--length)/2);
+    transform: translateY(calc(var(--thickness)/-2)) rotate(var(--rotation));
     transform-origin: center right;
     transition: all 0.1s;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.6, 0.17);
 }
 
-.second-hand {
-    background: red;
+.minute-hand {
     z-index: 1;
+}
+
+.second-hand {
+    z-index: 2;
+}
+
+.short {
+    --length: 33.3%;
+}
+
+.medium {
+    --length: 50%;
+}
+
+.long {
+    --length: 66.7%;
+}
+
+.full {
+    --length: 90%;
+}
+
+.thin {
+    --thickness: 1px;
+}
+
+.normal {
+    --thickness: 2px;
+}
+
+.border-black {
+    border-color: var(--black);
+}
+
+.border-faded-red {
+    border-color: var(--faded-red);
+}
+
+.border-none {
+    border: none !important;
+}
+
+.border-md {
+    border-width: 6px;
+}
+
+.border-lg {
+    border-width: 20px;
+}
+
+.border-xl {
+    border-width: 40px;
+}
+
+.border-solid {
+    border-style: solid;
+}
+
+.bg-faded-red {
+    background-color: var(--faded-red);
+}
+
+.bg-faded-yellow {
+    background-color: var(--faded-yellow);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-none {
+    background-color: transparent;
+}
+
+.sm {
+    --size: 5em;
+}
+
+.md {
+    --size: 7.5em;
+}
+
+.lg {
+    --size: 10em;
+}
+
+.xl {
+    --size: 15em;
 }
 
 .loading {
     display: none;
+}
+
+.row-start-1 {
+    grid-row-start: 1;
+}
+
+.row-start-2 {
+    grid-row-start: 2;
+}
+
+.row-start-3 {
+    grid-row-start: 3;
+}
+
+.row-end-1 {
+    grid-row-end: 1;
+}
+
+.row-end-2 {
+    grid-row-end: 2;
+}
+
+.row-end-3 {
+    grid-row-end: 3;
+}
+
+.row-end-4 {
+    grid-row-end: 4;
+}
+
+.column-start-1 {
+    grid-column-start: 1;
+}
+
+.column-start-2 {
+    grid-column-start: 2;
+}
+
+.column-start-3 {
+    grid-column-start: 3;
+}
+
+.column-start-4 {
+    grid-column-start: 4;
+}
+
+.column-start-5 {
+    grid-column-start: 5;
+}
+
+.column-start-6 {
+    grid-column-start: 6;
+}
+
+.column-start-7 {
+    grid-column-start: 7;
+}
+
+.column-end-1 {
+    grid-column-end: 1;
+}
+
+.column-end-2 {
+    grid-column-end: 2;
+}
+
+.column-end-3 {
+    grid-column-end: 3;
+}
+
+.column-end-4 {
+    grid-column-end: 4;
+}
+
+.column-end-5 {
+    grid-column-end: 5;
+}
+
+.column-end-6 {
+    grid-column-end: 6;
+}
+
+.column-end-7 {
+    grid-column-end: 7;
+}
+
+.column-end-8 {
+    grid-column-end: 8;
 }
