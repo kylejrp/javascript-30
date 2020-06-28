@@ -10,14 +10,14 @@ html {
     background: radial-gradient(ellipse at bottom left, var(--off-yellow), var(--off-white));
     background-attachment: fixed;
 
-    transform: perspective(3200px) rotate3d(0, 1, 0, 20deg) translateX(100px)
-
 }
 
 body {
     margin: 0;
     width: 100%;
     min-height: 100vh;
+
+    transform: perspective(3200px) rotate3d(0, 1, 0, 20deg) translateX(100px);
 }
 
 .wall {
