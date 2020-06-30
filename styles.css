@@ -17,9 +17,13 @@ html {
   .panels {
     min-height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
   }
 
   .panel {
+    flex: 1 1 0;
     background: #6B0F9C;
     box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
     color: white;
@@ -34,6 +38,14 @@ html {
     font-size: 20px;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .panel.open {
+      flex-grow: 4;
   }
 
   .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
@@ -44,9 +56,18 @@ html {
 
   /* Flex Children */
   .panel > * {
+    display: inline;
     margin: 0;
     width: 100%;
     transition: transform 0.5s;
+  }
+
+  .panel:not(.open) :first-child {
+      transform: translateY(-100%)
+  }
+
+  .panel:not(.open) :last-child {
+      transform: translateY(100%)
   }
 
   .panel p {
