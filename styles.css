@@ -45,21 +45,37 @@ html {
   }
 
   .panel.open {
-      flex-grow: 4;
+      flex-grow: 5;
   }
 
-  .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
-  .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
-  .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-  .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-  .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
+.panel1 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/7/a/7a2c8b8e-2e28-4f10-b04f-9b313c60c0bb.jpg?1564528014);
+    }
 
+    .panel2 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/1/0/105b2118-b22c-4ef5-bac7-836db4b8b9ee.jpg?1564527834);
+    }
+
+    .panel3 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/f/1/f108b0fb-420a-422d-ae85-9a99c0f73169.jpg?1564527912);
+    }
+
+    .panel4 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/4/4/44c1a862-00fc-4e79-a83a-289fef81503a.jpg?1564527888);
+    }
+
+    .panel5 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/f/8/f8772631-d4a1-440d-ac89-ac6659bdc073.jpg?1564527761);
+    }
   /* Flex Children */
   .panel > * {
     display: inline;
     margin: 0;
     width: 100%;
     transition: transform 0.5s;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    white-space: nowrap;
   }
 
   .panel:not(.open) :first-child {
@@ -72,9 +88,8 @@ html {
 
   .panel p {
     text-transform: uppercase;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Beleren SmallCaps Bold', cursive;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-    font-size: 2em;
   }
   
   .panel p:nth-child(2) {
