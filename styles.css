@@ -1,3 +1,20 @@
+.blur {
+  filter: blur(var(--blur));
+}
+
+.space {
+  margin: var(--spacing);
+}
+
+.color-base {
+  color: var(--base);
+}
+
+.bg-base {
+  color: var(--base);
+}
+
+
 body {
     text-align: center;
     background: #193549;
