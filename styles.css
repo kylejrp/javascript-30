@@ -2,8 +2,16 @@
   filter: blur(var(--blur));
 }
 
-.space {
-  margin: var(--spacing);
+.rotation {
+  transform: rotate(var(--rotation));
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.border-base {
+  border: 4px solid var(--base);
 }
 
 .color-base {

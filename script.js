@@ -9,12 +9,25 @@ const addAndFireInputListener = (selector, variable) => {
 
 const handleInput = (element, variable) => {
     if (element.value) {
-        const elementValue = `${element.value}${element.dataset.sizing ?? ''}`;
-        root.style.setProperty(variable, elementValue)
+        let elementValue = element.value;
+
+        if (element.dataset.offset) {
+            elementValue = parseInt(elementValue) + parseInt(element.dataset.offset);
+        }
+
+        if (element.dataset.absolute === "") {
+            elementValue = Math.abs(parseInt(elementValue));
+        }
+
+        const elementUnits = element.dataset.sizing ?? '';
+
+        const elementValueWithUnits = `${elementValue}${elementUnits}`;
+
+        root.style.setProperty(variable, elementValueWithUnits)
     }
 }
 
-addAndFireInputListener('input#spacing', '--spacing');
+addAndFireInputListener('input#rotation', '--rotation');
 addAndFireInputListener('input#blur', '--blur');
 addAndFireInputListener('input#base', '--base');
 
