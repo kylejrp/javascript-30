@@ -1,2 +1,2 @@
-# Clock ([Demo](https://kylejrp-dnd-equipment.netlify.app/))
+# Clock ([Demo](https://kylejrp-clock-wall.netlify.app/))
 Day 2/30 of #JavaScript30
