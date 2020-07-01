@@ -12,10 +12,16 @@ const search = () => {
         suggestions.firstChild.remove()
     }
 
+    if (equipment.length === foundEquipment.length) {
+        return;
+    }
+
     foundEquipment.forEach(equipment => {
         const li = document.createElement("li")
-        li.appendChild(document.createTextNode(equipment.name))
-        suggestions.appendChild(li);
+        const searchRegex = new RegExp(searchText, 'gi')
+        const equipmentText = sanitizeHTML(equipment.name).replace(searchRegex, '<span class="hl">$&</span>')
+        li.innerHTML = equipmentText;
+        suggestions.appendChild(li)
     })
 }
 
@@ -25,3 +31,16 @@ fetch(endpoint)
 //    .then(() => search())
 
 searchElement.addEventListener('input', search)
+
+
+/*!
+ * Sanitize and encode all HTML in a user-submitted string
+ * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {String} str  The user-submitted string
+ * @return {String} str  The sanitized string
+ */
+var sanitizeHTML = function (str) {
+    var temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
+};
