@@ -29,8 +29,6 @@ function draw(e) {
     context.lineTo(e.offsetX, e.offsetY);
     context.stroke();
 
-    console.log(degrees, lineWidthMagnitude, (lineWidthMagnitude * 90) + 10)
-
     degrees = (degrees + 1.0) % 360.0;
 
     [lastX, lastY] = [e.offsetX, e.offsetY];
