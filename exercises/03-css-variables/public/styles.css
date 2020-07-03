@@ -1,0 +1,41 @@
+.blur {
+  filter: blur(var(--blur));
+}
+
+.rotation {
+  transform: rotate(var(--rotation));
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.border-base {
+  border: 4px solid var(--base);
+}
+
+.color-base {
+  color: var(--base);
+}
+
+.bg-base {
+  color: var(--base);
+}
+
+
+body {
+    text-align: center;
+    background: #193549;
+    color: white;
+    font-family: 'helvetica neue', sans-serif;
+    font-weight: 100;
+    font-size: 50px;
+  }
+
+  .controls {
+    margin-bottom: 50px;
+  }
+
+  input {
+    width: 100px;
+  }
