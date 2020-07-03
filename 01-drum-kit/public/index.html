@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="explanation">
+        Press <kbd>a</kbd>, <kbd>s</kbd>, <kbd>d</kbd>, <kbd>f</kbd>, or <kbd>space</kbd> or press the buttons below to
+        play.
+    </div>
+    <div class="frames">
+        <div data-key=" " class="left frame">
+            <div class="background"></div>
+            <div class="foreground orange"></div>
+        </div>
+        <div data-key="a" class="middle frame red"></div>
+        <div data-key="s" class="middle frame yellow"></div>
+        <div data-key="d" class="middle frame blue"></div>
+        <div data-key="f" class="middle frame green"></div>
+        <div data-key=" " class="right frame">
+            <div class="background"></div>
+            <div class="foreground orange"></div>
+        </div>
+    </div>
+
+    <audio preload="auto" data-key="a" src="sounds/snare.wav"></audio>
+    <audio preload="auto" data-key="s" src="sounds/hihat.wav"></audio>
+    <audio preload="auto" data-key="d" src="sounds/tom.wav"></audio>
+    <audio preload="auto" data-key="f" src="sounds/openhat.wav"></audio>
+    <audio preload="auto" data-key=" " src="sounds/kick.wav"></audio>
+
+</body>
+
+</html>
