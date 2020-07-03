@@ -1,0 +1,101 @@
+html {
+    box-sizing: border-box;
+    background: #ffc600;
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  .panels {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .panel {
+    flex: 1 1 0;
+    background: #6B0F9C;
+    box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+    color: white;
+    text-align: center;
+    align-items: center;
+    /* Safari transitionend event.propertyName === flex */
+    /* Chrome + FF transitionend event.propertyName === flex-grow */
+    transition:
+      font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+      flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+      background 0.2s;
+    font-size: 20px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .panel.open {
+      flex-grow: 5;
+  }
+
+.panel1 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/7/a/7a2c8b8e-2e28-4f10-b04f-9b313c60c0bb.jpg?1564528014);
+    }
+
+    .panel2 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/1/0/105b2118-b22c-4ef5-bac7-836db4b8b9ee.jpg?1564527834);
+    }
+
+    .panel3 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/f/1/f108b0fb-420a-422d-ae85-9a99c0f73169.jpg?1564527912);
+    }
+
+    .panel4 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/4/4/44c1a862-00fc-4e79-a83a-289fef81503a.jpg?1564527888);
+    }
+
+    .panel5 {
+      background-image: url(https://img.scryfall.com/cards/art_crop/front/f/8/f8772631-d4a1-440d-ac89-ac6659bdc073.jpg?1564527761);
+    }
+  /* Flex Children */
+  .panel > * {
+    display: inline;
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    white-space: nowrap;
+  }
+
+  .panel:not(.open) :first-child {
+      transform: translateY(-100%)
+  }
+
+  .panel:not(.open) :last-child {
+      transform: translateY(100%)
+  }
+
+  .panel p {
+    text-transform: uppercase;
+    font-family: 'Beleren SmallCaps Bold', cursive;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+  }
+  
+  .panel p:nth-child(2) {
+    font-size: 4em;
+  }
+
+  .panel.open {
+    font-size: 40px;
+  }
