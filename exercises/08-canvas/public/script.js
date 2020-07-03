@@ -34,10 +34,10 @@ function draw(e) {
     [lastX, lastY] = [e.offsetX, e.offsetY];
 }
 
-canvas.addEventListener('mousedown', (e) => {
+canvas.addEventListener('pointerdown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
 });
-canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);
-canvas.addEventListener('mousemove', draw)
+canvas.addEventListener('pointerup', () => isDrawing = false);
+canvas.addEventListener('pointerout', () => isDrawing = false);
+canvas.addEventListener('pointermove', draw)
