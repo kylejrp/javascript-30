@@ -1,7 +1,14 @@
 const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+
+const width = window.innerWidth;
+const height = window.innerHeight;
+
+canvas.style.width = `${width}px`;
+canvas.style.height = `${height}px`;
+var scale = window.devicePixelRatio;
+canvas.width = Math.floor(width * scale);
+canvas.height = Math.floor(height * scale)
 
 context.lineJoin = 'round';
 context.lineCap = 'round';
@@ -26,17 +33,17 @@ function draw(e) {
     context.strokeStyle = color;
     context.beginPath();
     context.moveTo(lastX, lastY);
-    context.lineTo(e.offsetX, e.offsetY);
+    context.lineTo(e.offsetX * scale, e.offsetY * scale);
     context.stroke();
 
     degrees = (degrees + 1.0) % 360.0;
 
-    [lastX, lastY] = [e.offsetX, e.offsetY];
+    [lastX, lastY] = [e.offsetX * scale, e.offsetY * scale];
 }
 
 canvas.addEventListener('pointerdown', (e) => {
     isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
+    [lastX, lastY] = [e.offsetX * scale, e.offsetY * scale];
 });
 canvas.addEventListener('pointerup', () => isDrawing = false);
 canvas.addEventListener('pointerout', () => isDrawing = false);
