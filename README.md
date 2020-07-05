@@ -14,3 +14,4 @@ Solutions to the [JavaScript30](https://javascript30.com) course by [Wes Bos](ht
 6. [Type Ahead](exercises/06-type-ahead)
 7. [Array Cardio 2](exercises/07-array-cardio-2/script.js)
 8. [Canvas](exercises/08-canvas)
+9. [Dev Tools](exercises/09-dev-tools)
