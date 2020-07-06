@@ -15,6 +15,7 @@ html {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
 }
 
 .item:last-child {

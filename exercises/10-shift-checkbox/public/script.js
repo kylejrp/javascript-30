@@ -1,6 +1,7 @@
-const items = document.querySelectorAll("input[type=checkbox]");
+const items = document.querySelectorAll(".item");
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
 
-let shiftActive = false;
+let shiftActive;
 
 addEventListener("keydown", (e) => {
   if (e.key === "Shift") {
@@ -14,13 +15,15 @@ addEventListener("keyup", (e) => {
   }
 });
 
-items.forEach((item, index) =>
-  item.addEventListener("change", () => handleItemClick(item, index))
-);
+items.forEach((item, index) => {
+  item.addEventListener("click", (e) => {
+    handleRange(index);
+  });
+});
 
 let activeIndex;
 
-function handleItemClick(item, index) {
+function handleRange(index) {
   if (!shiftActive) {
     activeIndex = index;
     return;
@@ -29,7 +32,7 @@ function handleItemClick(item, index) {
   const lowerIndex = Math.min(activeIndex, index);
   const upperIndex = Math.max(activeIndex, index);
 
-  for (let i = lowerIndex; i < upperIndex; i++) {
-    items[i].checked = true;
+  for (let i = lowerIndex; i <= upperIndex; i++) {
+    checkboxes[i].checked = true;
   }
 }
