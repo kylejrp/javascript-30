@@ -24,7 +24,7 @@ items.forEach((item, index) => {
 let activeIndex;
 
 function handleRange(index) {
-  if (!shiftActive) {
+  if (!shiftActive || activeIndex === undefined) {
     activeIndex = index;
     return;
   }
