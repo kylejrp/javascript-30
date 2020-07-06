@@ -21,12 +21,8 @@ items.forEach((item, index) =>
 let activeIndex;
 
 function handleItemClick(item, index) {
-  console.log(item, index);
-
   if (!shiftActive) {
-    if (activeIndex === undefined) {
-      activeIndex = index;
-    }
+    activeIndex = index;
     return;
   }
 
